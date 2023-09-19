@@ -1,13 +1,10 @@
 package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
-import hello.hellospring.repository.MemoryMemeberRepositoy;
-import org.assertj.core.api.Assertions;
+import hello.hellospring.repository.MemoryMemeberRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,11 +12,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberServiceTest {
 
     MemberService memberService;
-    MemoryMemeberRepositoy memberRepository;
+    MemoryMemeberRepository memberRepository;
 
     @BeforeEach
     public void beforeEach() {
-        memberRepository = new MemoryMemeberRepositoy();
+        memberRepository = new MemoryMemeberRepository();
         memberService = new MemberService(memberRepository);
 
     }
