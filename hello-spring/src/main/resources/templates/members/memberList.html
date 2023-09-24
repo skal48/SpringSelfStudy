@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
+<meta charset="utf-8">
 <body>
 <div class="container">
     <div>
@@ -11,7 +12,7 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="member : ${members}">
+            <tr th:each="member : ${members}">  <!--모델 안에 있는 멤버를 꺼냄 /th:each 루프를 돈다. -->
                 <td th:text="${member.id}"></td>
                 <td th:text="${member.name}"></td>
             </tr>

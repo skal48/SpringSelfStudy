@@ -1,11 +1,10 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-public class MemoryMemeberRepository implements MemberRepository {
+public class MemoryMemberRepository implements MemberRepository {
 
 
     private static Map<Long, Member> store = new HashMap<>(); //동시성문제로 다른 것을 써야하지만 여기서는 단순하게 Hashmap 사용
@@ -14,6 +13,7 @@ public class MemoryMemeberRepository implements MemberRepository {
 
     @Override
     public Member save(Member member) {
+
         member.setId(++sequence);
         store.put(member.getId(), member);
         return member;
